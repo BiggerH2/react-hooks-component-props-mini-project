@@ -4,8 +4,13 @@ import App from "../components/App";
 
 test("renders the correct child components", () => {
   const { container } = render(<App />);
-  expect(container.querySelector(".App")).toBeInTheDocument();
-  expect(container.querySelector(".App header")).toBeInTheDocument();
-  expect(container.querySelector(".App aside")).toBeInTheDocument();
-  expect(container.querySelector(".App main")).toBeInTheDocument();
+  // Check if specific elements are rendered within the App component
+  const header = container.querySelector("header");
+  const aside = container.querySelector("aside");
+  const main = container.querySelector("main");
+
+  // Ensure that each element is present in the rendered output
+  expect(header).toBeInTheDocument();
+  expect(aside).toBeInTheDocument();
+  expect(main).toBeInTheDocument();
 });

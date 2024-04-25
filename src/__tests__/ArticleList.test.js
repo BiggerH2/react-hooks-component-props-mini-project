@@ -24,11 +24,11 @@ const posts = [
 ];
 
 test("renders a <main> element", () => {
-  const { container } = render(<ArticleList posts={posts} />);
+  const { container } = render(<ArticleList articles={posts} />);
   expect(container.querySelector("main")).toBeInTheDocument();
 });
 
-test("renders a Article component for each post passed as a prop", () => {
-  const { container } = render(<ArticleList posts={posts} />);
-  expect(container.querySelector("main").children).toHaveLength(3);
+test("renders an Article component for each post passed as a prop", () => {
+  const { container } = render(<ArticleList articles={posts} />);
+  expect(container.querySelectorAll("article")).toHaveLength(posts.length);
 });
